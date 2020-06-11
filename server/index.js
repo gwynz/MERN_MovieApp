@@ -5,7 +5,6 @@ const cors = require('cors')
 
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-
 const config = require("./config/key");
 
 // const mongoose = require("mongoose");
@@ -39,7 +38,7 @@ app.use('/api/favorite', require('./routes/favorite'));
 //use this to show the image you have in node js server to client (react js)
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
 app.use('/uploads', express.static('uploads'));
-
+app.use('/api/like', require('./routes/like-dislike'));
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
 

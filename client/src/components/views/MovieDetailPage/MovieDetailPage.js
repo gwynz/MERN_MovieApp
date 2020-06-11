@@ -6,6 +6,7 @@ import MovieInfo from '../MovieDetailPage/Sections/MovieInfo';
 import { Button, Row } from 'antd';
 import GridCards from '../LandingPage/Sections/GridCard';
 import Favorite from '../MovieDetailPage/Sections/Favorite'
+import LikeDislike from '../MovieDetailPage/Sections/LikeDislike'
 MovieDetailPage.propTypes = {
 
 };
@@ -80,7 +81,9 @@ function MovieDetailPage(props) {
                     </Row>
                 }
                 <br />
-
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <LikeDislike movie movieId={movieId} userId={localStorage.getItem('userId')} />
+                </div>
             </div>
         </div>
     );
