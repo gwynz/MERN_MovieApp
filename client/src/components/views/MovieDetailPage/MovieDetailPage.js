@@ -7,6 +7,9 @@ import { Button, Row } from 'antd';
 import GridCards from '../LandingPage/Sections/GridCard';
 import Favorite from '../MovieDetailPage/Sections/Favorite'
 import LikeDislike from '../MovieDetailPage/Sections/LikeDislike'
+import Comment from '../MovieDetailPage/Sections/comment'
+import axios from 'axios';
+
 MovieDetailPage.propTypes = {
 
 };
@@ -16,10 +19,14 @@ function MovieDetailPage(props) {
     const [Movie, setMovie] = useState({})
     const [Casts, setCasts] = useState([])
     const [ActorToggle, setActorToggle] = useState(false)
+    const [CommentLists, setCommentLists] = useState([])
+    const movieVariable = {
+        movieId: movieId
+    }
     useEffect(() => {
         const endpoint = `${API_URL}movie/${movieId}?api_key=${API_KEY}&language=en-US`
         fetchMovie(endpoint)
-
+        fetchComment()
     }, [])
 
     const fetchMovie = (path) => {
@@ -42,11 +49,27 @@ function MovieDetailPage(props) {
 
     }
 
+    const fetchComment = () =>{
+        axios.post('/api/comment/getComments', movieVariable)
+            .then(response => {
+                console.log(response)
+                if (response.data.success) {
+                    console.log('response.data.comments', response.data.comments)
+                    setCommentLists(response.data.comments)
+                } else {
+                    alert('Failed to get comments Info')
+                }
+            })
+    }
+
     const toggleActorView = () => {
         setActorToggle(!ActorToggle)
     }
     const addFavorite = () => {
         setActorToggle(!ActorToggle)
+    }
+    const updateComment = (newComment) => {
+        setCommentLists(CommentLists.concat(newComment))
     }
 
     return (
@@ -84,6 +107,8 @@ function MovieDetailPage(props) {
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <LikeDislike movie movieId={movieId} userId={localStorage.getItem('userId')} />
                 </div>
+
+                <Comment movieTitle={Movie.original_title} CommentLists={CommentLists} movieId={movieId} refreshFunction={updateComment} />
             </div>
         </div>
     );
