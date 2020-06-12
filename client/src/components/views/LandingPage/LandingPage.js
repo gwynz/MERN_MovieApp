@@ -6,11 +6,12 @@ import MainImage from './Sections/MainImage';
 import GridCards from './Sections/GridCard';
 const { Title } = Typography;
 
-function LandingPage() {
-
+function LandingPage(props) {
+    const category = props.match.params.category
     const [Movies, setMovies] = useState([])
     const [CurrentPage, setCurrentPage] = useState(0)
     useEffect(() => {
+        console.log(category)
         const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`
         fetchMovies(endpoint)
 
@@ -67,7 +68,7 @@ function LandingPage() {
 
                     <br />
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <button className="loadMore" onClick={loadMoreItems}>Load More</button>
+                        <Button className="loadMore" onClick={loadMoreItems}>Load More</Button>
                     </div>
                 </div>
 
