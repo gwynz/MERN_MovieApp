@@ -43,7 +43,7 @@ function Comments(props) {
     return (
         <div>
             <br />
-            <Title level={3} > Share your opinions about {props.movieTitle} </Title>
+            <Title level={3} style={{ color: 'white' }}> Share your opinions about {props.movieTitle} </Title>
             <hr />
             {/* Comment Lists  */}
             {console.log(props.CommentLists)}
@@ -58,7 +58,7 @@ function Comments(props) {
             ))}
 
             {props.CommentLists && props.CommentLists.length === 0 &&
-                <div style={{ display: 'flex', justifyContent:'center', alignItems:'center', height:'200px'}} >
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px', color: 'white' }} >
                     Be the first one who shares your thought about this movie
                 </div>
             }
@@ -66,7 +66,7 @@ function Comments(props) {
             {/* Root Comment Form */}
             <form style={{ display: 'flex' }} onSubmit={onSubmit}>
                 <TextArea
-                    style={{ width: '100%', borderRadius: '5px' }}
+                    style={{ width: '100%', borderRadius: '5px', color: 'white' }}
                     onChange={handleChange}
                     value={Comment}
                     placeholder="write some comments"

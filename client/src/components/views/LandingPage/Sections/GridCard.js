@@ -22,7 +22,7 @@ function GridCards(props) {
                 <a href={`/movie/${movieId}`} >
                     <Card
                         hoverable
-                        style={{ width: '90%' }}
+                        style={{ width: '90%', margin: 'auto' }}
                         cover={<img style={{ width: '100%', height: '320px' }} alt={movieName} src={image} />}
                     >
                         <Meta style={{ textAlign: 'center' }} title={movieName} />

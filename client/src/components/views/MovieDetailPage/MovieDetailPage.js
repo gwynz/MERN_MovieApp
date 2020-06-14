@@ -49,7 +49,7 @@ function MovieDetailPage(props) {
 
     }
 
-    const fetchComment = () =>{
+    const fetchComment = () => {
         axios.post('/api/comment/getComments', movieVariable)
             .then(response => {
                 console.log(response)
@@ -104,7 +104,7 @@ function MovieDetailPage(props) {
                     </Row>
                 }
                 <br />
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', color: 'white' }}>
                     <LikeDislike movie movieId={movieId} userId={localStorage.getItem('userId')} />
                 </div>
 

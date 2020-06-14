@@ -125,16 +125,16 @@ function LoginPage(props) {
               )}
 
               <Form.Item>
-                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
-                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
-                  forgot password
+                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} style={{ color: 'white' }}>Remember me</Checkbox>
+                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right', color: 'white' }}>
+                  Forgot password
                   </a>
                 <div>
                   <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
                     Log in
                 </Button>
                 </div>
-                Or <a href="/register">register now!</a>
+                <a href="/register" style={{ color: 'white' }}>Or register now!</a>
               </Form.Item>
             </form>
           </div>

@@ -15,8 +15,8 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   line-height: 1.5;
-  color: #24292e;
-  background-color: #fff;
+  color: #fff;
+  background-color: #001529 !important;
 }
 
 .app {
@@ -36,4 +36,9 @@ input.error {
   color: red;
   height: 5px;
   margin-top: -12px;
+}
+
+tr, th, td{
+  background-color: #001529 !important;
+    color: white !important;
 }
