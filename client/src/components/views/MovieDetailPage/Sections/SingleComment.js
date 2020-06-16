@@ -61,6 +61,7 @@ function SingleComment(props) {
                         {props.comment.content}
                     </p>
                 }
+                style={{color:'white'}}
             ></Comment>
 
 

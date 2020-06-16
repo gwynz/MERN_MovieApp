@@ -171,7 +171,7 @@ function LikeDislikes(props) {
                         onClick={onDisLike}
                     />
                 </Tooltip>
-                <span style={{ paddingLeft: '8px', cursor: 'auto' }}>{Dislikes}</span>
+                <span style={{ paddingLeft: '8px', cursor: 'auto'}}>{Dislikes}</span>
             </span>
         </React.Fragment>
     )

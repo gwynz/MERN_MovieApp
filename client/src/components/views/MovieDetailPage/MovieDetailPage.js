@@ -9,7 +9,7 @@ import Favorite from '../MovieDetailPage/Sections/Favorite'
 import LikeDislike from '../MovieDetailPage/Sections/LikeDislike'
 import Comment from '../MovieDetailPage/Sections/comment'
 import axios from 'axios';
-
+import './Sections/style.css';
 MovieDetailPage.propTypes = {
 
 };

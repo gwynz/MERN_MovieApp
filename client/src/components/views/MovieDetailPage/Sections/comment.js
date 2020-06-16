@@ -66,7 +66,7 @@ function Comments(props) {
             {/* Root Comment Form */}
             <form style={{ display: 'flex' }} onSubmit={onSubmit}>
                 <TextArea
-                    style={{ width: '100%', borderRadius: '5px', color: 'white' }}
+                    style={{ width: '100%', borderRadius: '5px', color: 'black' }}
                     onChange={handleChange}
                     value={Comment}
                     placeholder="write some comments"

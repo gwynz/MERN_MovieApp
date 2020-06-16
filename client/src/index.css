@@ -38,7 +38,11 @@ input.error {
   margin-top: -12px;
 }
 
-tr, th, td{
+tr, th, td, p{
   background-color: #001529 !important;
     color: white !important;
+}
+
+button.ant-btn > span {
+  color: black !important;
 }
